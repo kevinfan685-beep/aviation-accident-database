@@ -28,7 +28,7 @@ export function AccidentDetail({ accident }: { accident: Accident }) {
       <section><p className="eyebrow">04 / {zh ? "飞行数据" : "FLIGHT DATA"}</p><h2>{zh ? "高度与空速趋势" : "Altitude and airspeed trend"}</h2><FlightChart data={accident.chart} note={accident.chartNote} /></section>
     </article><aside className="detail-sidebar">
       <section className="panel"><h2>{zh ? "事件时间线" : "Event timeline"}</h2><ol className="timeline">{accident.timeline.map((event) => <li key={event.time}><time>{event.time}</time><p>{event.text[language]}</p></li>)}</ol></section>
-      <section className="panel"><h2>{zh ? "官方资料" : "Official sources"}</h2><p>{zh ? "以下链接由负责调查的官方机构发布。" : "These links are published by the responsible investigation authority."}</p><a href={accident.sourceUrl} target="_blank" rel="noreferrer">{zh ? "调查档案页面" : "Investigation page"} ↗</a><a href={accident.reportUrl} target="_blank" rel="noreferrer">{zh ? "阅读最终报告（PDF）" : "Read final report (PDF)"} ↗</a></section>
+      <section className="panel"><h2>{zh ? "原始资料" : "Primary records"}</h2><p>{zh ? "以下链接指向官方调查资料或可信的历史档案。" : "These links lead to official investigation material or trusted historical archives."}</p><a href={accident.sourceUrl} target="_blank" rel="noreferrer">{zh ? "查看调查或档案记录" : "Open investigation or archive record"} ↗</a><a href={accident.reportUrl} target="_blank" rel="noreferrer">{zh ? "阅读主要报告或记录" : "Read primary report or record"} ↗</a></section>
     </aside></div>
-  </div><footer>{zh ? "航空安全档案 · 数据来源：官方调查机构" : "AeroSafety Archive · Sources: official investigation authorities"}</footer></main>;
+  </div><footer>{zh ? "航空安全档案 · 数据来源：调查报告与历史档案" : "AeroSafety Archive · Sources: investigation reports and historical archives"}</footer></main>;
 }
